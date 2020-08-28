@@ -1,0 +1,123 @@
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+
+body {
+	background-image: url("img/example_1.png");
+	background-attachment: fixed;
+
+	width: 100%;
+    height: auto;
+    min-height:100%;
+
+
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	display: flex;
+    flex-direction: row-reverse;
+
+	font-size:120%;
+}
+
+
+.program_desc_container {
+	padding-top:48px;
+	padding-bottom:48px;
+
+	background-color: rgb(170, 170, 200);
+
+	width:  50%;
+    height: auto;
+    
+    float: right;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+@media (max-aspect-ratio: 3/2) {
+	body {
+		flex-direction: column-reverse;
+		justify-content: center;
+		height:auto;
+		background: rgb(170, 170, 200);
+	}
+	.program_desc_container {
+		width:  100%;
+  		height: auto;
+	}
+}
+
+.program_title {
+	font-family: 'Lora', serif;
+	text-align: center;
+	color:rgb(0,0,0);
+	font-size:200%;
+}
+
+ul li { 
+	margin-bottom: 4px;
+}
+
+.program_desc {
+	margin-top:8px;
+}
+
+.reasons_to_use {
+    padding-left:20%;
+    list-style-type:circle;
+    padding-right:20%;
+}
+
+.reason_to_use_text {
+	font-family: 'Noto Serif', serif;
+}
+
+.use_word {
+	margin-top:16px;
+	color:rgb(70, 130, 100);
+	text-align: center;
+}
+
+.not_use_word {
+	margin-top:16px;
+	color:rgb(150, 70, 70);
+	text-align: center;
+}
+
+.reasons_to_use li {
+	font-family: 'Inconsolata', monospace;
+	font-size:90%;
+	margin-left:32px;
+}
+
+#system_requirements {
+	text-align:center;
+	padding-top:10%;
+	font-family: 'Noto Serif', serif;
+	font-size:70%;
+	margin-left:20%;
+	margin-right:20%;
+}
+
+#patreon_button {
+	display:flex;
+	text-align:center;
+	background: rgb(100, 255, 100);
+	padding:24px;
+	display: inline-block;
+}
+
+#patreon_link {
+	font-family: 'Inconsolata', monospace;
+}
+
+#patreon_button:hover {
+	filter: brightness(115%);
+}

@@ -1,0 +1,38 @@
+
+html {
+	scroll-behavior: smooth;
+}
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+
+body {
+	margin-left:20%;
+	margin-right:20%;
+
+	background:rgb(200, 170, 170);
+	font-family: 'Inconsolata';
+}
+
+.hey_example_step {
+	padding-top:24px;
+}
+
+.hey_example_step_number {
+	margin-left:-16px;
+	font-size:120%;
+}
+
+.desc {
+	font-style: italic;
+	font-size:90%;
+}
+
+#link_to_personal_code {
+	padding-bottom:48px;
+	text-align:center;
+}

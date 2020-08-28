@@ -1,0 +1,219 @@
+<!doctype html>
+
+<html lang="EN">
+
+	<head>
+		<title>ASCII sequences</title>
+		
+		<link rel="icon" type="image/png" href="img/favicon.png"/>
+
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="ascii_sequences.css">
+		<link rel="stylesheet" href="common.css">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+
+
+
+	<body>
+
+		<div class="escape_sequences_list">
+
+			<div class="escape_sequence" id="move_cursor_up">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ <b class="escape_sequence_param">x</b> A</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Move cursor up(☝) by <b class="escape_sequence_param">x</b>.</ul>
+
+					<ul class="escape_sequence_details">Because Typer is not cell based terminal, if you move cursor up on the shorter line, cursor would move left as well, BUT there's a workaround for that, that is implemented in Typer: if line above is shorter Typer will fill the end of the line above with spaces.
+
+					<b>Obvious behaviour</b>:<ul class="move_cursor_example">1: short line above
+2: long line, really long long line.▌
+<b>ESC[1A  (Move cursor up by 1)</b>
+1: short line above▌
+2: long line, really long long line.
+						</ul>
+					<b>Fixed behaviour</b>:<ul class="move_cursor_example">1: short line above
+2: long line, really long long line.▌
+<b>ESC[1A  (Move cursor up by 1)</b>
+1: short line above                 ▌
+2: long line, really long long line.
+						</ul>
+					</ul>	
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ <b class="escape_sequence_param">x</b> B</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Move cursor down(👇🏾) by <b class="escape_sequence_param">x</b>.</ul>
+
+					<ul class="escape_sequence_details">See <a href="#move_cursor_up">move cursor up</a></ul>	
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ <b class="escape_sequence_param">x</b> C</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Move cursor right(👉🏻) by <b class="escape_sequence_param">x</b>.</ul>
+					<ul class="escape_sequence_details">Will move until end of line is met, doesn't fill with spaces after as <a href="#move_cursor_up">move cursor up</a> does</ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ <b class="escape_sequence_param">x</b> D</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Move cursor left(👈🏿) by <b class="escape_sequence_param">x</b>.</ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ <b class="escape_sequence_param">x</b> J</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Clear the screen. <b class="escape_sequence_param">x</b> is a parameter that is ignored, so you can just skip it: <b>ESC[J</b>.</ul>
+				</ul>
+			</div>
+
+
+			<div class="escape_sequence" style="margin-top:8px">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ 0 m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Reset foreground and background colors to default. 0 can be skipped: <b>ESC[m</b>.</ul>
+				</ul>
+			</div>
+
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ <b class="escape_sequence_param" style="font-size:80%">[30;37]</b> m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Set foreground color from <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#3.2F4_bit">3 bit</a> value.</ul>
+					<ul class="escape_sequence_details">For example, <b>ESC[34m</b> will set foreground color to <span style="color:rgb(0, 0, 192)">blue</span></ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ <b class="escape_sequence_param" style="font-size:80%">[90;97]</b> m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Set bright foreground color from <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#3.2F4_bit">3 bit</a> value.</ul>
+					<ul class="escape_sequence_details">For example, <b>ESC[94m</b> will set foreground color to <span style="color:rgb(0, 0, 255)">bright??? blue</span></ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header" style="width:auto;min-width:auto"><a href="#esc_explanation">ESC</a> [ 38;5;<b class="escape_sequence_param" style="font-size:80%;">[0; 255]</b> m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Set foreground color from <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit">8 bit</a> value.</ul>
+					<ul class="escape_sequence_details">For example, <b>ESC[38;5;64m</b> will set foreground color to <span style="color:#5f8700">this</span></ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header" style="width:auto;min-width:auto"><a href="#esc_explanation">ESC</a> [ 38;2;<b class="escape_sequence_param" style="font-size:80%">R;G;B</b> m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Set foreground color from 24 bit value.</ul>
+					<ul class="escape_sequence_details" style="margin:0px;margin-top:-8px">
+						<b class="escape_sequence_param">R;G;B</b> must in in <span class="escape_sequence_param">[0;255]</span> range
+						For example, <b>ESC[38;2;228;0;120m</b> will set foreground color to <span style="color:rgb(228,0,120)">this</span></ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ 39 m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Reset foreground color to default.</ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ <b class="escape_sequence_param" style="font-size:80%">[40;47]</b> m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Set background color from <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#3.2F4_bit">3 bit</a> value.</ul>
+					<ul class="escape_sequence_details">For example, <b>ESC[44m</b> will set background color to <span style="background-color:rgb(0, 0, 192);color:white">blue</span></ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ <b class="escape_sequence_param" style="font-size:80%">[100;107]</b> m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Set bright background color from <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#3.2F4_bit">3 bit</a> value.</ul>
+					<ul class="escape_sequence_details">For example, <b>ESC[104m</b> will set background color to <span style="background-color:rgb(0, 0, 255);color:white">bright??? blue</span></ul>
+				</ul>
+			</div>
+
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header" style="width:auto;min-width:auto"><a href="#esc_explanation">ESC</a> [ 48;5;<b class="escape_sequence_param" style="font-size:80%;">[0; 255]</b> m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Set background color from <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit">8 bit</a> value.</ul>
+					<ul class="escape_sequence_details">For example, <b>ESC[48;5;64m</b> will set background color to <span style="background-color:#5f8700;color:white">this</span></ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header" style="width:auto;min-width:auto"><a href="#esc_explanation">ESC</a> [ 48;2;<b class="escape_sequence_param" style="font-size:80%">R;G;B</b> m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Set background color from 24 bit value.</ul>
+					<ul class="escape_sequence_details" style="margin:0px;margin-top:-8px">
+						<b class="escape_sequence_param">R;G;B</b> must in in <span class="escape_sequence_param">[0;255]</span> range
+						For example, <b>ESC[48;2;228;0;120m</b> will set background color to <span style="background-color:rgb(228,0,120);">this</span></ul>
+				</ul>
+			</div>
+
+			<div class="escape_sequence">
+				<span class="escape_sequence_header"><a href="#esc_explanation">ESC</a> [ 49 m</span>
+
+				<ul class="escape_sequence_desc_container">
+					<ul class="escape_sequence_desc">Reset background color to default.</ul>
+				</ul>
+			</div>
+
+
+
+
+			<span class="escape_explanation">				
+				<p><b>Move cursor right by 100</b> example:</p>
+				<p id="esc_explanation"><b>ESC</b> is represented as <span style="color:hsl(20, 76%, 40%)">"\x1b"</span> in most programming languages, which means: "character with hex value of <b>1b</b>"</p>
+
+				<span class="lang_example">
+					<span class="lang_name">Python:</span>
+					<span class="source_code">sys.stdout.write('\x1b[100C')</span>
+				</span>
+				<span class="lang_example">
+					<span class="lang_name">C:</span>
+					<span class="source_code">printf("\x1b[100C")</span>
+				</span>
+			</span>
+
+			<!--<span class="contact_address">
+				<p>If you want to request an escape sequence, contact me&nbsp<a href="mailto:butichex@gmail.com" style="color:rgb(100, 10, 10)">butichex@gmail.com</a>&nbspand please provide a reason.</p>
+			</span>-->
+
+		</div>
+
+	</body>
+
+</html>

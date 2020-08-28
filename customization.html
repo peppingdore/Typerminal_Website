@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="EN">
+
+	<head>
+		<title>Customization</title>
+		
+		<link rel="icon" type="image/png" href="img/favicon.png"/>
+
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="customization.css">
+		<link rel="stylesheet" href="common.css">
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+
+
+	<body>
+
+		<p style="margin-top:64px">
+			So the idea behind integrating Python is to switch from crappy shell languages
+			to more real-world programming language.
+			<br>
+			The way to pass string to Python interpreter is to prefix it with #.	
+		</p>
+
+		<p>
+			<blockquote>
+			<b>help</b> command example:
+			<img src="img/help_example.png" style="width:100%;margin-top:8px">
+		</blockquote>
+		</p>
+
+		As you can see string("#help()") is prefixed with #, which will pass "help()" to Python.
+		And that will result in function <b>help()</b>(implemented in <i>python/typer_commands.py</i>) being called. 
+
+		<br>
+		There's only small set of commands implemented by default in Typerminal, <b>but you can easily add your own ones</b>.
+		<br>
+
+		<p class="hey_example_step">
+			<h2 style="text-align:center">Example of custom command</h2>
+		</p>
+		<p>
+			<span class="hey_example_step_number">1) Create user_main.py</span>
+			<br>
+			<br>
+
+
+			<span class="desc"><b>Assuming</b> that working directory is Typerminal's root</span>
+			<img src="img/hey_touch.png" style="width:100%;margin-top:8px">
+		</p>
+		
+		<p class="hey_example_step">
+			<span class="hey_example_step_number">2) Type code in user_main.py</span>
+			<br>
+			<br>
+
+
+			<span class="desc">Example source code of <i>user_scripts/user_main.py</i></span>
+			<img src="img/hey_source_code.png" style="width:100%;margin-top:8px">
+		</p>
+
+		<p class="hey_example_step" style="margin-bottom: 40px;">
+			<span class="hey_example_step_number">3) <b style="font-size:120%">RESTART TYPERMINAL!!!</b>, so it will (re)load user_scripts/user_main.py</span>
+			<br>
+
+			<img src="img/hey_result.png" style="width:100%;margin-top:8px">
+		</p>
+
+		<p id="link_to_personal_code">
+			My personal scripts: <b><a href="https://github.com/peppingdore/Typerminal_Workspace">https://github.com/peppingdore/Typerminal_Workspace</a></b>
+		</p>
+
+	</body>
+
+</html>
